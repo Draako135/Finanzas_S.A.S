@@ -1,0 +1,98 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif; /* Use a clean, sans-serif font */
+    background-color: #ffffff; /* White background */
+    color: #333333; /* Dark gray text for better readability */
+    line-height: 1.6; /* Improved line height for readability */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #f8f9fa; /* Light gray for header */
+    padding: 20px 0; /* Padding for header */
+    text-align: center; /* Centered text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+header h1 {
+    font-size: 3em; /* Larger title */
+    margin: 0; /* Remove default margin */
+    font-weight: bold; /* Bold title */
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #ffffff; /* White background for nav */
+    border-bottom: 2px solid #eaeaea; /* Light border for separation */
+    position: fixed; /* Fix navbar at the top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure navbar is above other content */
+}
+
+nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+nav ul li {
+    display: inline; /* Horizontal list */
+    margin-right: 30px; /* Space between items */
+}
+
+nav a {
+    text-decoration: none; /* Remove underline */
+    color: #007bff; /* Bootstrap primary color */
+    font-weight: bold; /* Bold text */
+    font-size: 1.2em; /* Slightly larger font for nav links */
+}
+
+nav a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Main Content Styles */
+main {
+    padding: 80px 20px; /* Padding for main content, space for fixed navbar */
+}
+
+h2 {
+    font-size: 2.5em; /* Subheading size */
+    margin-top: 20px; /* Space above subheadings */
+    font-weight: bold; /* Bold subheading */
+}
+
+p {
+    margin-bottom: 15px; /* Space below paragraphs */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f8f9fa; /* Light gray for footer */
+    text-align: center; /* Centered text */
+    padding: 20px 0; /* Padding for footer */
+    position: relative; /* Positioning for footer */
+    bottom: 0; /* Stick to bottom */
+    width: 100%; /* Full width */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+    color: #666666; /* Lighter gray for footer text */
+}
+
+/* Button Styles */
+.btn {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white; /* White text */
+    padding: 12px 24px; /* Padding for buttons */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 1.1em; /* Slightly larger font for buttons */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

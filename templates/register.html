@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='registrar.css') }}">
+</head>
+<body>
+    <div class="register-card">
+        <h2>Registro</h2>
+        <h3>Ingresa tu información</h3>
+        <form class="register-form" id="register-form" method="POST" action="/register/sumbit">
+            <input type="text" id="first_name" name="first_name" placeholder="Nombres" required pattern="^[a-zA-Z\s]+$" oninvalid="setCustomValidity('Por favor, ingrese un nombre válido (sólo letras y espacios)')"/>
+            <input type="text" id="last_name" name="last_name" placeholder="Apellidos" required pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$" oninvalid="setCustomValidity('Por favor, ingrese un apellido válido (sólo letras y espacios)')"/>
+            <input type="date" id="birth_date" name="birth_date" placeholder="Fecha de nacimiento" required min="1800-01-01" max="2022-12-31" oninvalid="setCustomValidity('Por favor, ingrese una fecha de nacimiento válida (entre 1900-01-01 y 2022-12-31)')"/>
+            <select id="document_type" name="document_type" required oninvalid="setCustomValidity('Por favor, seleccione un tipo de documento')">
+                <option value="" disabled selected>Tipo de documento</option>
+                <option value="cedula">Cédula</option>
+                <option value="nit">NIT</option>
+                <option value="pasaporte">Pasaporte</option>
+            </select>
+            <input type="text" id="document_number" name="document_number" placeholder="Documento" required pattern="[0-9-]+" oninvalid="setCustomValidity('Por favor, ingrese un número de documento válido (sólo números y guiones)')"/>
+            <input type="email" id="email" name="email" placeholder="Correo electrónico" required oninvalid="setCustomValidity('Por favor, ingrese un correo electrónico válido')"/>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':|,.<>\/?]).{8,}$" oninvalid="setCustomValidity('Por favor, ingrese una contraseña válida (mínimo 8 caracteres, mayúscula, minúscula y dígito)')"/>
+            <button type="submit">REGISTRAR</button>
+        </form>
+    </div>
+</body>
+</html>
