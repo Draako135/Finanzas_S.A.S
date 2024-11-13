@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='parteinicio.css') }}">
+    <style>
+        /* Estilos adicionales para los botones */
+        .edit-button, .admin-button, .logout-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .edit-button:hover, .admin-button:hover, .logout-button:hover {
+            background-color: #2980b9;
+        }
+
+        .edit-button a {
+            color: white; /* Asegura que el texto del enlace sea blanco */
+            text-decoration: none; /* Quita el subrayado */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        </div>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Novedades</a>
+            <a href="#">Servicios</a>
+        </nav>
+        <div class="user-options">
+            <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+            <div class="user-icon">
+                <img src="{{ url_for('static', filename='user-icon.png') }}" alt="Usuario">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="profile-container">
+            <p class="role">ROL = {{ user['rol'].capitalize() }}</p> <!-- Mostrar el rol del usuario -->
+            <div class="profile-picture">
+                <img src="{{ url_for('static', filename='user-profile.png') }}" alt="Foto de perfil">
+            </div>
+            <p><strong>Nombre:</strong> {{ user['nombre'] }} {{ user['apellido'] }}</p>
+            <p><strong>Correo:</strong> {{ user['correo'] }}</p>
+            <p><strong>Fecha de nacimiento:</strong> {{ user['birth_date'] }}</p>
+
+            {% if user['rol'] == 'admin' %}
+                <!-- Contenido adicional específico para el administrador -->
+                <button class="admin-button">Panel de Administración</button>
+            {% endif %}
+
+            <a href="{{ url_for('editar_perfil') }}" class="edit-button">Editar</a>
+            <button class="logout-button">
+                <a href="{{ url_for('logout') }}" style="color: inherit; text-decoration: none;">Cerrar sesión</a>
+            </button>
+            
+        </div>
+    </main>
+</body>
+</html>
